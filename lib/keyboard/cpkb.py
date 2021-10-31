@@ -1,8 +1,8 @@
 from cpkf.scan import matrix_scan
 import board
 
-col_pins = [board.P1_13, board.P1_15, board.P0_02, board.P0_29, board.P0_31, board.P0_26, board.P0_04, board.P0_06, board.P0_08, board.P1_09]
-row_pins = [board.P1_00, board.P0_24, board.P0_22, board.P0_20 ]
+col_pins = [board.D8,board.D7,board.D6,board.D5,board.D4, board.MOSI,board.MISO,board.SCK,board.AIN0,board.AIN1]
+row_pins = [board.AIN3,board.AIN2, board.D2, board.D3]
 
 Scan = matrix_scan.Scan(row_pins, col_pins, row2col=False)
 
