@@ -3,7 +3,7 @@ from cpkf.key_object import LO, LT, C, S, MO, Alt
 from cpkf.keycode_jp import KeycodeJP as JP
 from cpkf.consumer_control import VOLD, VOLU
 from cpkf.mousekey import MOUSEU, MOUSED, MOUSEL, MOUSER, WHEELU, WHEELD, MOUSELB
-#from cpkf.bluetooth_object import BT_EN, USB_EN
+from cpkf.bluetooth_object import BT_EN, USB_EN
 
 L_LOWER = 1 
 L_RAISE = 2
@@ -24,7 +24,7 @@ keymap = [ [
             
             #lower = 1
             [
-                S(KC.ONE), S(KC.TWO), S(KC.THREE), S(KC.FOUR), S(KC.FIVE),
+                BT_EN(), USB_EN(), S(KC.THREE), S(KC.FOUR), S(KC.FIVE),
                     S(KC.SIX), S(KC.SEVEN), S(KC.EIGHT), S(KC.NINE), S(KC.ZERO),
                 KC.ONE, KC.TWO, KC.THREE, KC.FOUR, KC.FIVE,
                     KC.SIX, KC.SEVEN, KC.EIGHT, KC.NINE, KC.ZERO,
@@ -60,8 +60,8 @@ keymap = [ [
             
             #adjust = 4
             [
-                None, None, None, None, None,
-                    None, None, KC.PRINT_SCREEN, VOLU(), None,
+                BT_EN(), None, None, None, None,
+                    None, None, KC.PRINT_SCREEN, VOLU(), USB_EN(),
                 None, None, None, None, None,
                     None, None, None, None, None,
                 None, None, None, None, None,

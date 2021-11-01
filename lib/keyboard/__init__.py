@@ -1,1 +1,1 @@
-from keyboard.cpkb import Scan, layouts
+from keyboard.ohashi import Scan, layouts

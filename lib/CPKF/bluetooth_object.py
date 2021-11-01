@@ -53,7 +53,7 @@ ble = adafruit_ble.BLERadio()
 ble.name = "CircuitPython Keyboard"
 #ble._adapter.enabled = False
 
-np = neopixel.NeoPixel(board.NEOPIXEL,1)
+np = neopixel.NeoPixel(board.D10,1)
 
 def disconnectAll():
     if ble.connected:

@@ -10,14 +10,11 @@ except:
     
 
 class CPKFKeyboard:
-    def __init__(self, keymap, scan_method, ble, hid):
+    def __init__(self, keymap, scan_method):
         self.scan_method = scan_method
         self.keymap = keymap
         self.currentLayer = 0
         self.layerHistory = [self.currentLayer]
-        
-        self.ble = ble
-        self.hid = hid
         
         self.press = []
         for i in range(len(keymap[0])):
@@ -26,8 +23,8 @@ class CPKFKeyboard:
         usb_status = len(usb_hid.devices)
         try:
             if(usb_status):
-                self.adakbd = Keyboard(self.hid.devices)
-                self.mouse = Mouse(self.hid.devices)
+                self.adakbd = Keyboard(usb_hid.devices)
+                self.mouse = Mouse(usb_hid.devices)
             else:
                 self.adakbd = None
                 self.mouse = None
@@ -50,8 +47,6 @@ class CPKFKeyboard:
         if self.hid_device :
             self.adakbd = Keyboard(self.hid_device)
             self.mouse = Mouse(self.hid_device)
-        
-        print('jmi')
             
             
     def start(self):
